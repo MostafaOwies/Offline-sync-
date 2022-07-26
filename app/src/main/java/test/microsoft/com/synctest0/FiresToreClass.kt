@@ -1,4 +1,4 @@
-package test.microsoft.com.synctest0.roomdb
+package test.microsoft.com.synctest0
 
 import android.widget.Toast
 import com.google.firebase.firestore.ktx.firestore
@@ -6,7 +6,7 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import test.microsoft.com.synctest0.MainActivity
+import test.microsoft.com.synctest0.roomdb.OfflineEntity
 import java.lang.Exception
 
 class FiresToreClass(private val ioDispatcher: CoroutineDispatcher=Dispatchers.IO) {

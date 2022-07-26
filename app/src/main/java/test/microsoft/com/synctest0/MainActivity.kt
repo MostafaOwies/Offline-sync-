@@ -7,7 +7,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
-import test.microsoft.com.synctest0.roomdb.FiresToreClass
 import test.microsoft.com.synctest0.roomdb.OfflineDao
 import test.microsoft.com.synctest0.roomdb.OfflineEntity
 import test.microsoft.com.synctest0.roomdb.SyncTestApp
