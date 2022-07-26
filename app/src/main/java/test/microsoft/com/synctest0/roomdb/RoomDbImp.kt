@@ -1,4 +1,4 @@
-package test.microsoft.com.synctest0
+package test.microsoft.com.synctest0.roomdb
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

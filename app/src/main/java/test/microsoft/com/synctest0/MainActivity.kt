@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import test.microsoft.com.synctest0.roomdb.OfflineDao
 import test.microsoft.com.synctest0.roomdb.OfflineEntity
-import test.microsoft.com.synctest0.roomdb.SyncTestApp
+import test.microsoft.com.synctest0.roomdb.RoomDbImp
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
