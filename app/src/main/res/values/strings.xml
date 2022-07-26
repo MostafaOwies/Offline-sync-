@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SyncTest0</string>
+    <string name="add_data">Add Data</string>
+    <string name="enterdata">Enter Data</string>
+    <string name="sync">Sync</string>
+</resources>
