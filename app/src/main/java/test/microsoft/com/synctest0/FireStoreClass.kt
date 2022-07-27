@@ -9,9 +9,18 @@ import kotlinx.coroutines.withContext
 import test.microsoft.com.synctest0.roomdb.OfflineEntity
 import java.lang.Exception
 
-class FiresToreClass(private val ioDispatcher: CoroutineDispatcher=Dispatchers.IO) {
+/**
+ * the FireStore class where we initialize the fireStore and its functionalities.
+ */
+class FireStoreClass(private val ioDispatcher: CoroutineDispatcher=Dispatchers.IO) {
     private val mFirestore =Firebase.firestore
 
+    /**
+     * store the data from the Offline Entity into a HashMap of "String , Any".
+     * inside a coroutine dispatcher we will call on a fireStore document
+     * and update the document with the defined HashMap of Offline Entity.
+     * on success will make a Toast to inform the user of the Sync.
+     */
     suspend fun syncData(activity:MainActivity,offlineEntity:List<OfflineEntity>){
         try {
             val dataHashMap=HashMap<String,Any>()

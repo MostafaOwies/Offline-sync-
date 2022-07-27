@@ -5,6 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+/**
+ * the Room dataBase class where we initialize the database as a singleton.
+ * takes entities : Offline Entity.
+ */
 @Database(entities = [OfflineEntity::class], version = 1, exportSchema = false)
 abstract class OfflineDatabase :RoomDatabase(){
     abstract fun offlineDao():OfflineDao

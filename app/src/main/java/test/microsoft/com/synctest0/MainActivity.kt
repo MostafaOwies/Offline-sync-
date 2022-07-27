@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         addDataBtn=findViewById(R.id.add_data_btn)
         syncDataBtn=findViewById(R.id.sync_data_btn)
 
+        /**
+         * Instantiate a singleton of the Dao.
+         */
         val mOfflineDao=(application as SyncTestApp).db.offlineDao()
 
         addDataBtn.setOnClickListener {
@@ -36,6 +39,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Insert the data from the EditTextView into the Offline Entity of our dataBase.
+     * Uses our defined Dao to access its method "fun insert()" to insert the data.
+     * Check if the editTextView is empty, if not:-
+     * Launch a coroutine scope and call on "fun insert()" from the RoomDbImp class
+     * and insert the text into the Offline Entity
+     *
+     * this method will be clicked when the Add Data button is clicked
+     */
     private fun inputData(mOfflineDao: OfflineDao){
         val mData=enterDataEt.text.toString()
         try {
@@ -54,11 +66,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Inside a coroutine Scope, collects the data list from the data flow inside our Offline Entity.
+     * Collected data flow list will be passed to the syncData function inside the FireStoreClass
+     * to be synced with the online database at the fireStore
+     *
+     * this method will be called when the Sync button is clicked
+     */
     private fun syncData(mOfflineDao: OfflineDao){
         try {
             lifecycleScope.launch {
                 RoomDbImp(mOfflineDao).getAll().collect{
-                    FiresToreClass().syncData(this@MainActivity,it)
+                    FireStoreClass().syncData(this@MainActivity,it)
                 }
             }
         }catch (e:Exception){

@@ -5,6 +5,11 @@ import androidx.room.Insert
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
+/**
+ *The Dao to interact with the data in the data base has two methods :-
+ * fun insert() : insert data into the dataBase.
+ * fun getAll() : retrieve all data from the dataBase.
+ */
 @Dao
 interface OfflineDao {
     @Insert
